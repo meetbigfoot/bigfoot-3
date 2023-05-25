@@ -2,9 +2,9 @@
 
 :root {
   --background-color: #fff;
-  --link-color: #f86;
-  --text-color: #1119;
-  --title-color: #111;
+  --link-color: #00b398;
+  --text-color: #00333d;
+  --title-color: #00333d;
 }
 
 /* cascade */
@@ -18,87 +18,151 @@ body {
   text-rendering: geometricPrecision;
 }
 
-h1 {
-  color: var(--title-color);
-  font-size: 6rem;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-h2 {
-  color: var(--title-color);
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 3rem 0 1rem;
-}
-
-blockquote {
-  border-left: 3px solid var(--title-color);
-  display: block;
-  margin: unset;
-  padding: 0 2rem;
-}
-
-li {
-  margin: 0 0 1rem;
-}
-li strong {
-  color: var(--title-color);
-}
-
-p {
-  margin: unset;
-}
-
-/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
-a {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  color: var(--link-color);
-  text-decoration: none;
-  transition: background-size 0.5s cubic-bezier(0.1, 1, 0.3, 1);
-}
-a:focus,
-a:hover {
-  background-size: 100% 2px;
-}
-
-.External::after {
-  content: '↗';
-  margin-left: 0.2em;
-  vertical-align: middle;
-}
-
-button {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-i {
-  text-align: center;
-  width: 1.2em;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-}
-
 /* layout */
-
-body {
-  padding: 2rem;
-}
 
 .Center {
   margin: 0 auto;
   max-width: 800px;
+}
+
+.fill {
+  flex: 1;
+}
+
+/* header */
+
+#header {
+  display: flex;
+  gap: 0.5rem;
+  padding: 12px 1rem;
+  white-space: nowrap;
+}
+#logo {
+  fill: currentColor;
+  height: 40px;
+}
+.nav-button {
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1rem;
+  gap: 8px;
+  padding: 14px 1rem;
+}
+.nav-button svg {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  #header {
+    display: flex;
+  }
+}
+
+/* app */
+
+#stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 1rem 12px;
+  position: relative;
+}
+#day {
+  display: flex;
+  gap: 12px;
+}
+.day {
+  background: #eee6;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  flex: 1;
+  padding: 12px;
+}
+.day.active {
+  background: #00b398;
+}
+#map {
+  border-radius: 0.5rem;
+  height: calc(100vh - 148px);
+}
+
+/* cards */
+
+#cards {
+  bottom: 1rem;
+  display: flex;
+  gap: 12px;
+  left: 1rem;
+  overflow-x: auto;
+  position: absolute;
+  width: calc(100% - 2rem);
+}
+.card {
+  border-radius: 1rem;
+  box-shadow: 0px 1rem 2rem -1rem #0005;
+  cursor: pointer;
+  flex: 0 0 20rem;
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+}
+.card:hover .card-info {
+  bottom: -6rem;
+}
+.card-img {
+  /* prettier-ignore */
+  background: transparent url('https://res.cloudinary.com/bigfoot-cdn/image/upload/v1664983669/placeholders/stock_images/beach_bar_1_kiakjq.jpg') no-repeat center / cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.card-info {
+  -webkit-backdrop-filter: blur(0.5rem);
+  align-items: flex-start;
+  backdrop-filter: blur(0.5rem);
+  background: #0005;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  left: 0;
+  padding: 0.5rem;
+  position: absolute;
+  transition: bottom 0.4s cubic-bezier(0.9, 0, 0.1, 1);
+  width: 100%;
+  z-index: 1;
+}
+.card-location {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 700;
+}
+.card-title {
+  font-size: 22px;
+  line-height: 24px;
+  margin: 0;
+}
+.card-tag {
+  background: #fff3;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+.card-date {
+  background: #fffe;
+  border-radius: 4px;
+  color: #00333d;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0.5rem;
 }
