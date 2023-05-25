@@ -93,7 +93,109 @@ const renderEvents = events => {
     // console.log(obj)
     const card = document.createElement('div')
     card.className = 'card'
-    card.addEventListener('click', e => window.open(`https://meetbigfoot.com/experience/${obj.id}`))
+    card.addEventListener('click', e => {
+      renderStory({
+        date: 'Thursday, May 25, 2023',
+        title: '🌇San Francisco Adventure🌉',
+        prompt: 'san francisco coffee, patio lunch, and sunset dancing',
+        parts: [
+          {
+            time_of_day: 'morning',
+            places: [
+              {
+                name: 'Jane on Fillmore',
+                address: '2123 Fillmore St, San Francisco, CA 94115',
+                area: 'Pacific Heights',
+                distance: '0.5 miles',
+                latitude: 37.78946,
+                longitude: -122.43393,
+                icon: 'coffee',
+                reason: 'Artisanal Coffee & Pastries',
+                tags: 'coffee, breakfast, pastries',
+                tiktok_query: '#janeonfillmore #sanfrancisco #coffee',
+                time_of_day: 'morning',
+              },
+              {
+                name: 'Lyon Street Steps',
+                address: 'Lyon St, San Francisco, CA 94115',
+                area: 'Presidio Heights',
+                distance: '0.7 miles',
+                latitude: 37.79056,
+                longitude: -122.44734,
+                icon: 'hiking',
+                reason: 'Scenic Workout',
+                tags: 'hiking, workout, views',
+                tiktok_query: '#lyonstreetsteps #sanfrancisco #hiking',
+                time_of_day: 'morning',
+              },
+            ],
+          },
+          {
+            time_of_day: 'afternoon',
+            places: [
+              {
+                name: 'Roam Artisan Burgers',
+                address: '1923 Fillmore St, San Francisco, CA 94115',
+                area: 'Pacific Heights',
+                distance: '0.3 miles',
+                latitude: 37.78886,
+                longitude: -122.43341,
+                icon: 'utensils',
+                reason: 'Gourmet Burgers & Fries',
+                tags: 'lunch, burgers, fries',
+                tiktok_query: '#roamartisianburgers #sanfrancisco #burgers',
+                time_of_day: 'afternoon',
+              },
+              {
+                name: 'Japantown Peace Plaza',
+                address: 'Post St &, Buchanan St, San Francisco, CA 94115',
+                area: 'Japantown',
+                distance: '1 mile',
+                latitude: 37.78555,
+                longitude: -122.42938,
+                icon: 'landmark',
+                reason: 'Cultural Landmark',
+                tags: 'japantown, culture, shopping',
+                tiktok_query: '#japantown #sanfrancisco #culture',
+                time_of_day: 'afternoon',
+              },
+            ],
+          },
+          {
+            time_of_day: 'evening',
+            places: [
+              {
+                name: 'El Techo de Lolinda',
+                address: '2518 Mission St, San Francisco, CA 94110',
+                area: 'Mission District',
+                distance: '0.5 miles',
+                latitude: 37.75692,
+                longitude: -122.41845,
+                icon: 'cocktail',
+                reason: 'Panoramic Rooftop Bar',
+                tags: 'drinks, rooftop, views',
+                tiktok_query: '#eltechodelolinda #sanfrancisco #cocktails',
+                time_of_day: 'evening',
+              },
+              {
+                name: 'Brouwerij West SF',
+                address: '1350 Van Ness Ave, San Francisco, CA 94109',
+                area: 'Nob Hill',
+                distance: '0.9 miles',
+                latitude: 37.78982,
+                longitude: -122.42256,
+                icon: 'beer',
+                reason: 'Craft Brewery',
+                tags: 'beer, brewery, nightlife',
+                tiktok_query: '#brouwerijwestsf #sanfrancisco #beer',
+                time_of_day: 'evening',
+              },
+            ],
+          },
+        ],
+      })
+      // window.open(`https://meetbigfoot.com/experience/${obj.id}`)
+    })
 
     const img = document.createElement('div')
     img.className = 'card-img'
